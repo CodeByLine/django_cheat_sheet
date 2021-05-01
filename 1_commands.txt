@@ -1,0 +1,14 @@
+# commands
+
+touch templates/registration/login.html && touch templates/registration/logout.html
+
+
+django-admin help
+python manage.py help
+
+
+SEED DATA:
+	python3 manage.py dumpdata > seed_data.json
+	python manage.py loaddata seed_data.json
+
+

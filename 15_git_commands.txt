@@ -1,0 +1,56 @@
+
+git init
+
+### CREATE NEW BRANCH & PUSH:
+
+    git push <remote-name> <local-branch-name>:<remote-branch-name>
+
+    (Remote-name: usually is "origin")
+    https://stackoverflow.com/questions/1519006/how-do-you-create-a-remote-git-branch
+
+### GIT UNDO COMMIT
+
+    	git reset <file>
+
+### SHOW GIT REMOTE:
+
+	git remote show origin
+
+### GIT REMOVE ALL *DELETED* FILES: 
+    	git add -u 
+
+### FIND GIT REPOSITORY PATH:
+	git config --get remote.origin.url
+
+
+### // delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+git push origin --delete remoteBranchName
+
+
+### REMOVE CACHED FILES
+
+### The rules in your .gitignore file only apply to untracked files. Since the files under that directory were already committed in your repository, you have to unstage them, create a commit, and push that to GitHub:
+
+	git rm -r --cached some-directory
+	git commit -m 'Remove the now ignored directory "some-directory"'
+	git push origin master
+
+### GIT CHANGE URL:
+
+	git@github.com:CodeByLine/todowoo-API.git
+
+
+### Remove Untracked Files in Git:
+
+	git clean (or first: git clean -d -n  (dry run) then: git clean -d -f)
+
+https://linuxize.com/post/how-to-remove-untracked-files-in-git/
+
+
+
+
