@@ -1,18 +1,44 @@
-# Project URLS 
-# Create all auth routes
+# Django Auth
+
+# settings.py
+INSTALLED_APPS = [
+    ...
+    'accounts'; 
+    'crispy_forms',
+    "crispy_bootstrap5",
+
+
+] 
+    
+$ pip install crispy-bootstrap5
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+
+# To include all auth routes:
+# project_root: urls.py
+path('account/', include('django.contrib.auth.urls')),
+
+# accounts/urls.py  (or users/urls.py)
+from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
 from posts.views import SignupView
 
-# Include all auth routes
-path('account/', include('django.contrib.auth.urls')),
+path('login', views.LoginView.as_view(), name='login'),
+path('logout', views.LogoutView.as_view(), name='logout'),
 
-# Some example of auth routes
 # path('account/login/', LoginView.as_view(), name='login'),
 # path('account/logout/', LogoutView.as_view(), name='logout'),
 # path('account/signup/', SignupView.as_view(), name='signup'),
 
 # Views
 # LoginView and LogoutView already exist in django.contrib.auth.views
+
+
+
+
 # custom SignupView:
 class SignupView(generic.CreateView):
     template_name = 'registration/signup.html'
@@ -39,8 +65,10 @@ LOGIN_REDIRECT_URL = '/posts'
 LOGIN_URL = '/login'
 
 # templates
-# registration/login.html
+# project_root/templates/registration/login.html
+
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
     <form method="post">
         {% csrf_token %}
@@ -51,6 +79,7 @@ LOGIN_URL = '/login'
 
 # registration/signup.html
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
     <form method="post">
         {% csrf_token %}
