@@ -21,3 +21,9 @@ def index(request):
 ###  Bootstrap styling  ###
 Django paginator: https://docs.djangoproject.com/en/3.1/ref/paginator/
 Add Bootstrap styling--change classes etc.
+
+
+3 ways: (fr https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views)
+    Add a ordering inside a class Meta declaration on your model.
+    Add a queryset attribute in your custom class-based view, specifying an order_by().
+    Adding a get_queryset method to your custom class-based view and also specify the order_by().
