@@ -35,10 +35,13 @@ git push origin --delete remoteBranchName
 ### REMOVE CACHED FILES
 
 ### The rules in your .gitignore file only apply to untracked files. Since the files under that directory were already committed in your repository, you have to unstage them, create a commit, and push that to GitHub:
-
-	git rm -r --cached some-directory
+	
+	git rm -r test_dir
+	git rm -r --cached test_dir
 	git commit -m 'Remove the now ignored directory "some-directory"'
 	git push origin master
+
+
 
 ### GIT CHANGE URL:
 

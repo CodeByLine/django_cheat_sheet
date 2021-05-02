@@ -61,8 +61,13 @@ class CustomUserCreationForm(UserCreationForm):
         field_classes = {'username': UsernameField}
 
 # settings.py 
-LOGIN_REDIRECT_URL = '/posts'
-LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/'  # default is user/profile
+LOGOUT_REDIRECT_URL = '/' # default is admin login
+LOGIN_URL = 'login'
+
+
+# LOGIN_REDIRECT_URL = '/posts'
+# LOGIN_URL = '/login'
 
 # templates
 # project_root/templates/registration/login.html
